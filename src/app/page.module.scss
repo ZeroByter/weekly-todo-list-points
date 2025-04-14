@@ -1,0 +1,14 @@
+.root {
+  width: 100dvw;
+
+  .navbar {
+    display: flex;
+    padding: 6px;
+    gap: 6px;
+
+    .navbarButton {
+      flex: 1;
+      font-size: 18px;
+    }
+  }
+}
