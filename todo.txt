@@ -1,0 +1,9 @@
+todo:
+- create contexts for getting and updating values from LocalStorage
+  - tasks
+  - rewards
+  - tasks completed per week (dictionary where key is week index, value is list of ids of completed tasks)
+  - rewards redeemed per week (dictionary same as tasks)
+  - points (global, not per week)
+- create UI for displaying all this kekw
+- when task is completed, play mario coin sfx!
