@@ -26,13 +26,13 @@ const Reward: FC<Props> = ({ reward }) => {
     );
   };
 
-  const handleTaskNewPointsForCompletion = (newPointsForCompletion: number) => {
+  const handleTaskNewPointsForCompletion = (newCost: number) => {
     setRewards(
       rewards.map((loopReward) => {
         if (loopReward.id == reward.id) {
           return {
             ...loopReward,
-            pointsForCompletion: newPointsForCompletion,
+            cost: newCost,
           };
         } else {
           return loopReward;
