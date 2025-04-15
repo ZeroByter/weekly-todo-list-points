@@ -1,7 +1,7 @@
 type TaskType = {
   id: string;
   description: string;
-  points_for_completion: number;
+  pointsForCompletion: number;
 };
 
 export default TaskType;

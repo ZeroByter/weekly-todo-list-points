@@ -1,42 +1,44 @@
 import { FC } from "react";
+import { useMainData } from "../contexts/mainData";
+import { randomId } from "../utils";
+import TasksTable from "../components/pages/settings/tasksTable";
+import RewardsTable from "../components/pages/settings/rewardsTable";
 
 const SettingsPage: FC = () => {
+  const { tasks, setTasks, rewards, setRewards } = useMainData();
+
+  const handleCreateTask = () => {
+    setTasks([
+      ...tasks,
+      {
+        id: randomId(),
+        description: "",
+        pointsForCompletion: 0,
+      },
+    ]);
+  };
+
+  const handleCreateReward = () => {
+    setRewards([
+      ...rewards,
+      {
+        id: randomId(),
+        description: "",
+        cost: 0,
+      },
+    ]);
+  };
+
   return (
     <div>
       <div>
-        tasks <button>add task</button>
+        tasks <button onClick={handleCreateTask}>add task</button>
       </div>
+      <TasksTable />
       <div>
-        <div>
-          <span>lol task</span>
-          <button>delete</button>
-        </div>
-        <div>
-          <span>lol task</span>
-          <button>delete</button>
-        </div>
-        <div>
-          <span>lol task</span>
-          <button>delete</button>
-        </div>
+        rewards <button onClick={handleCreateReward}>add reward</button>
       </div>
-      <div>
-        rewards <button>add reward</button>
-      </div>
-      <div>
-        <div>
-          <span>lol reward</span>
-          <button>delete</button>
-        </div>
-        <div>
-          <span>lol reward</span>
-          <button>delete</button>
-        </div>
-        <div>
-          <span>lol reward</span>
-          <button>delete</button>
-        </div>
-      </div>
+      <RewardsTable />
     </div>
   );
 };

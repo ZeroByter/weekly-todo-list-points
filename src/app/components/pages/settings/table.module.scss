@@ -1,0 +1,22 @@
+.table {
+  width: 100dvw;
+
+  td {
+    input {
+      width: 100%;
+    }
+  }
+
+  td:first-child {
+    width: 100%;
+  }
+
+  td:nth-child(2) {
+    min-width: 50px;
+  }
+
+  td:nth-child(3) {
+    display: flex;
+    justify-content: center;
+  }
+}
