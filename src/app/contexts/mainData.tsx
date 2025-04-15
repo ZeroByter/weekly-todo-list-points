@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useContext, FC, ReactNode } from "react";
+import { createContext, useContext, FC, ReactNode, useState } from "react";
 import TaskType from "@/types/task";
 import RewardType from "@/types/rewards";
 import { useLocalStorageState } from "ahooks";
@@ -22,6 +22,9 @@ type ContextType = {
 
   points: number;
   setPoints: (newPoints: number) => void;
+
+  currentWeekDate: Date;
+  setCurrentWeekDate: (newWeek: Date) => void;
 };
 
 export const MainDataContext = createContext<ContextType>({} as ContextType);
@@ -46,6 +49,7 @@ const MainDataContextProvider: FC<Props> = ({ children }) => {
   const [points, setPoints] = useLocalStorageState<number>("points", {
     defaultValue: 0,
   });
+  const [currentWeekDate, setCurrentWeekDate] = useState(new Date());
 
   return (
     <MainDataContext.Provider
@@ -60,6 +64,8 @@ const MainDataContextProvider: FC<Props> = ({ children }) => {
         setRewardsPerWeek,
         points: points || 0,
         setPoints,
+        currentWeekDate,
+        setCurrentWeekDate,
       }}
     >
       {children}

@@ -3,6 +3,7 @@ import { useMainData } from "../contexts/mainData";
 import { randomId } from "../utils";
 import TasksTable from "../components/pages/settings/tasksTable";
 import RewardsTable from "../components/pages/settings/rewardsTable";
+import css from "./settings.module.scss";
 
 const SettingsPage: FC = () => {
   const { tasks, setTasks, rewards, setRewards } = useMainData();
@@ -30,7 +31,7 @@ const SettingsPage: FC = () => {
   };
 
   return (
-    <div>
+    <div className={css.root}>
       <div>
         tasks <button onClick={handleCreateTask}>add task</button>
       </div>

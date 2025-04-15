@@ -1,0 +1,15 @@
+.root {
+  padding: 6px;
+
+  .weekSelection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    font-size: 18px;
+
+    .input {
+      font-size: 15px;
+    }
+  }
+}
