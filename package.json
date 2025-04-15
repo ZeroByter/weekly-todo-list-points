@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "deploy": "gh-pages -d out",
-    "predeploy": "yarn build"
+    "predeploy": "yarn build && touch out/.nojekyll"
   },
   "dependencies": {
     "ahooks": "^3.8.4",
